@@ -113,48 +113,4 @@ $(document).ready(function(){
     $("."+resultA).addClass("active").hide().fadeIn();
   });
 
-  let $imgB = $("#s3 .content>div"),
-      $btnB = $("#s3 .indicator span"),
-      oldImgB = 0,
-      newImgB = 0,
-      countB = $imgB.length;
-  
-  function changeImgB(newImgB){
-    if(oldImgB != newImgB){
-      let tabMoveD = 200*newImgB;
-      $("#s3 .indicator .btn-bg").animate({left:tabMoveD});
-      $imgB.eq(newImgB).stop().animate({left: "-760px"});
-      $imgB.eq(oldImgB).appendTo("#s3 .content");
-    };
-    oldImgB = newImgB;
-  };
-
-  function autoImgB(){
-    newImgB++;
-    if(newImgB>countB-1){
-      newImgB=0;
-    };
-    changeImgB(newImgB);
-  };
-
-  timerImgB = setInterval(autoImgB,4000);
-
-  $btnB.click(function(){
-    let tabNumC = $(this).index();
-    let tabMoveE = 200*tabNumC;
-      $("#s3 .indicator .btn-bg").animate({left:tabMoveE});
-
-    let resultA = $(this).attr("data-alt");
-    let tabNumD = $("."+resultA).index();
-    let tabMoveF = 760*tabNumD;
-      $("#s3 .content").stop().animate({left:-tabMoveF});
-  });
-
-  $("#s3 .box").mouseenter(function(){
-    clearInterval(timerImgB);
-  })
-  .mouseleave(function(){
-    timerImgB = setInterval(autoImgB,4000);
-  });
-
 });
