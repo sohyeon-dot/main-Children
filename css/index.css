@@ -599,7 +599,7 @@ section{
   height: 690px;
   transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(-60deg); transition-duration: 0ms;
 }
-#s3 .swiper-slide-shadow-left{display: none;}
+#s3 .swiper-slide-shadow-left{width: 500px;}
 #s3 .swiper-container:before{
   content: '';
   position: absolute;
